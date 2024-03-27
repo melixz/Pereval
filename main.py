@@ -1,23 +1,47 @@
 from fastapi import FastAPI
-from config import settings
-from db.session import engine
-from db.base_class import Base
+import uvicorn
+from pydantic import BaseModel
+from typing import List
+
+app = FastAPI()
+
+class User(BaseModel):
+    email: str
+    fam: str
+    name: str
+    otc: str
+    phone: str
+
+class Coords(BaseModel):
+    latitude: str
+    longitude: str
+    height: str
+
+class Image(BaseModel):
+    data: str
+    title: str
+
+class Level(BaseModel):
+    winter: str
+    summer: str
+    autumn: str
+    spring: str
+
+class Item(BaseModel):
+    beauty_title: str
+    title: str
+    other_titles: str
+    connect: str
+    add_time: str
+    user: User
+    coords: Coords
+    level: Level
+    images: List[Image]
+
+@app.post("/submitData/")
+async def submit_data(item: Item):
+    return {"item": item}
 
 
-def create_tables():
-    Base.metadata.create_all(bind=engine)
-
-
-def start_application():
-    app = FastAPI(title=settings.PROJECT_NAME, version=settings.PROJECT_VERSION)
-    create_tables()
-    return app
-
-
-app = start_application()
-
-
-@app.get("/")
-def home():
-    return {"msg": "Hello FastAPI🚀"}
+uvicorn.run(app, host="127.0.0.1", port=8000)
 
