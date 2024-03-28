@@ -1,47 +1,38 @@
 from fastapi import FastAPI
+from db.base_class import Item
+from db.session import ItemService
 import uvicorn
-from pydantic import BaseModel
-from typing import List
 
 app = FastAPI()
-
-class User(BaseModel):
-    email: str
-    fam: str
-    name: str
-    otc: str
-    phone: str
-
-class Coords(BaseModel):
-    latitude: str
-    longitude: str
-    height: str
-
-class Image(BaseModel):
-    data: str
-    title: str
-
-class Level(BaseModel):
-    winter: str
-    summer: str
-    autumn: str
-    spring: str
-
-class Item(BaseModel):
-    beauty_title: str
-    title: str
-    other_titles: str
-    connect: str
-    add_time: str
-    user: User
-    coords: Coords
-    level: Level
-    images: List[Image]
+item_service = ItemService()
 
 @app.post("/submitData/")
 async def submit_data(item: Item):
-    return {"item": item}
+    item_service.add_item(item)
+    return {"message": "Data submitted successfully"}
+
+@app.put("/items/{item_id}/status/{status}")
+async def update_moderation_status(item_id: int, status: str):
+    allowed_statuses = ['new', 'pending', 'accepted', 'rejected']
+    if status not in allowed_statuses:
+        return {"error": "Invalid status value"}
+    try:
+        item_service.set_moderation_status(item_id, status)
+        return {"message": "Moderation status updated successfully"}
+    except ValueError as e:
+        return {"error": str(e)}
 
 
-uvicorn.run(app, host="127.0.0.1", port=8000)
+@app.get("/items/{item_id}/status")
+async def get_moderation_status(item_id: int):
+    try:
+        status = item_service.get_moderation_status(item_id)
+        return {"status": status}
+    except ValueError as e:
+        return {"error": str(e)}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000)
+
 

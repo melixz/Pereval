@@ -1,9 +1,10 @@
-from sqlalchemy import create_engine, Column, Integer, String, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.orm import relationship
 
 
 Base = declarative_base()
+
 
 class Item(Base):
     __tablename__ = 'items'
@@ -14,6 +15,7 @@ class Item(Base):
     other_titles = Column(String)
     connect = Column(String)
     add_time = Column(DateTime)
+    status = Column(String, default='new')  # Добавленное поле status
     user_id = Column(Integer, ForeignKey('users.id'))
     coords_id = Column(Integer, ForeignKey('coords.id'))
     level_id = Column(Integer, ForeignKey('levels.id'))
@@ -22,6 +24,7 @@ class Item(Base):
     coords = relationship("Coords", back_populates="items")
     level = relationship("Level", back_populates="items")
     images = relationship("Image", back_populates="item")
+
 
 class User(Base):
     __tablename__ = 'users'
@@ -35,6 +38,7 @@ class User(Base):
 
     items = relationship("Item", back_populates="user")
 
+
 class Coords(Base):
     __tablename__ = 'coords'
 
@@ -44,6 +48,7 @@ class Coords(Base):
     height = Column(String)
 
     items = relationship("Item", back_populates="coords")
+
 
 class Level(Base):
     __tablename__ = 'levels'
@@ -55,6 +60,7 @@ class Level(Base):
     spring = Column(String)
 
     items = relationship("Item", back_populates="level")
+
 
 class Image(Base):
     __tablename__ = 'images'
