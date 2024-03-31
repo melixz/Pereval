@@ -4,6 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from db.base_class import Item, User, Coords, Level, Image
 
 
+
 db_host = os.getenv("POSTGRES_SERVER")
 db_port = os.getenv("POSTGRES_PORT")
 db_user = os.getenv("POSTGRES_USER")
@@ -55,6 +56,30 @@ class ItemService:
             return item.status
         else:
             raise ValueError(f"Item with id {item_id} not found")
+
+    def get_item(self, item_id):
+        item = self.session.query(Item).get(item_id)
+        if item:
+            return item
+        else:
+            raise ValueError(f"Item with id {item_id} not found")
+
+    def edit_item(self, item_id, item_data):
+        item = self.session.query(Item).filter(Item.id == item_id, Item.status == 'new').first()
+        if item:
+            # Здесь обновите поля item с использованием данных из item_data
+            # Пропустите обновление полей, содержащих ФИО, адрес почты, и телефон
+            self.session.commit()
+            return 1, "Record updated successfully"
+        else:
+            return 0, "Item not found or not in 'new' status"
+
+    def get_items_by_user_email(self, email):
+        items = self.session.query(Item).join(User).filter(User.email == email).all()
+        if items:
+            return items
+        else:
+            return []
 
     def __del__(self):
         self.session.close()

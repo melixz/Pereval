@@ -1,24 +1,20 @@
+import uvicorn
 from fastapi import FastAPI
 from db.base_class import Item
 from db.session import ItemService
-import uvicorn
+from typing import Optional
+from db.base_class import RequestModel
+
+
 
 app = FastAPI()
 item_service = ItemService()
+
 
 @app.post("/submitData/")
 async def submit_data(item: Item):
     item_service.add_item(item)
     return {"message": "Data submitted successfully"}
-
-
-@app.get("/submitData/{id}")
-async def get_data(id: int):
-    try:
-        data = item_service.get_data_by_id(id)
-        return data
-    except ValueError as e:
-        return {"error": str(e)}
 
 
 @app.put("/items/{item_id}/status/{status}")
@@ -33,13 +29,31 @@ async def update_moderation_status(item_id: int, status: str):
         return {"error": str(e)}
 
 
-@app.get("/items/{item_id}/status")
-async def get_moderation_status(item_id: int):
+@app.get("/submitData/{item_id}")
+async def get_item(item_id: int):
     try:
-        status = item_service.get_moderation_status(item_id)
-        return {"status": status}
+        item = item_service.get_item(item_id)
+        return item
     except ValueError as e:
         return {"error": str(e)}
+
+
+@app.patch("/submitData/{item_id}")
+async def edit_item(item_id: int, item: RequestModel):
+    try:
+        state, message = item_service.edit_item(item_id, item)
+        return {"state": state, "message": message}
+    except Exception as e:  # Используйте более конкретное исключение, если возможно
+        return {"state": 0, "message": str(e)}
+
+
+@app.get("/submitData/")
+async def get_items_by_user_email(user__email: Optional[str] = None):
+    if user__email:
+        items = item_service.get_items_by_user_email(user__email)
+        return items
+    else:
+        return {"error": "Email is required"}
 
 
 if __name__ == "__main__":
