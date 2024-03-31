@@ -5,22 +5,16 @@
 1. Клонируйте репозиторий:
 
 ```bash
-git clone https://github.com/your-username/your-project.git
+git clone https://github.com/melixz/Pereval
 ```
 
-2. Перейдите в директорию проекта:
-
-```bash
-cd your-project
-```
-
-3. Установите необходимые зависимости:
+2. Установите необходимые зависимости:
 
 ```bash
 pip install fastapi uvicorn sqlalchemy psycopg2 python-dotenv
 ```
 
-4. Создайте файл `.env` в корневой директории проекта и добавьте следующие переменные окружения:
+3. Создайте файл `.env` в корневой директории проекта и добавьте следующие переменные окружения:
 
 ```
 POSTGRES_SERVER=<ваш_хост_postgres>
