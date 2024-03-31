@@ -11,6 +11,16 @@ async def submit_data(item: Item):
     item_service.add_item(item)
     return {"message": "Data submitted successfully"}
 
+
+@app.get("/submitData/{id}")
+async def get_data(id: int):
+    try:
+        data = item_service.get_data_by_id(id)
+        return data
+    except ValueError as e:
+        return {"error": str(e)}
+
+
 @app.put("/items/{item_id}/status/{status}")
 async def update_moderation_status(item_id: int, status: str):
     allowed_statuses = ['new', 'pending', 'accepted', 'rejected']
