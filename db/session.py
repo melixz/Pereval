@@ -1,8 +1,11 @@
 import os
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from db.base_class import Item, User, Coords, Level, Image
 
+
+load_dotenv()
 
 
 db_host = os.getenv("POSTGRES_SERVER")
@@ -11,7 +14,7 @@ db_user = os.getenv("POSTGRES_USER")
 db_pass = os.getenv("POSTGRES_PASSWORD")
 db_name = os.getenv("POSTGRES_DB")
 
-engine = create_engine(f"postgresql://{db_user}:{db_pass}@{db_host}:{db_port}@{db_name}")
+engine = create_engine(f"postgresql://{db_user}:{db_pass}@{db_host}:{db_port}/{db_name}")
 Session = sessionmaker(bind=engine)
 
 

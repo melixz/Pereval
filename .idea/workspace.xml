@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="Пятый. GET /submitData/&lt;id&gt; — Получение записи по ID">
+    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="Шестой. Добавлены PATCH /submitData/{id} и GET /submitData/?user__email=&lt;email&gt; а так же новые методы ItemService">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/base_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/base_class.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/session.py" afterDir="false" />
@@ -47,6 +47,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.main.executor": "Run",
+    "Python.session.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "ID__PATCH",
@@ -106,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711901345281</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Шестой. Добавлены PATCH /submitData/{id} и GET /submitData/?user__email=&lt;email&gt; а так же новые методы ItemService">
+      <option name="closed" value="true" />
+      <created>1711904557451</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711904557451</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -141,6 +151,7 @@
     <MESSAGE value="Второй" />
     <MESSAGE value="Четвертый. Все задачи первого спринта выполнены" />
     <MESSAGE value="Пятый. GET /submitData/&lt;id&gt; — Получение записи по ID" />
-    <option name="LAST_COMMIT_MESSAGE" value="Пятый. GET /submitData/&lt;id&gt; — Получение записи по ID" />
+    <MESSAGE value="Шестой. Добавлены PATCH /submitData/{id} и GET /submitData/?user__email=&lt;email&gt; а так же новые методы ItemService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Шестой. Добавлены PATCH /submitData/{id} и GET /submitData/?user__email=&lt;email&gt; а так же новые методы ItemService" />
   </component>
 </project>
