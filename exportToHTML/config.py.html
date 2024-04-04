@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>config.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #c88cdc;}
+.s1 { color: #afb9c3;}
+.s2 { color: #96be78;}
+.s3 { color: #808080;}
+.s4 { color: #17bbdd;}
+</style>
+</head>
+<body bgcolor="#17233d">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+config.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">os</span>
+<span class="s0">from </span><span class="s1">dotenv </span><span class="s0">import </span><span class="s1">load_dotenv</span>
+
+<span class="s0">from </span><span class="s1">pathlib </span><span class="s0">import </span><span class="s1">Path</span>
+<span class="s1">env_path = Path(</span><span class="s2">'.'</span><span class="s1">) / </span><span class="s2">'.env'</span>
+<span class="s1">load_dotenv(dotenv_path=env_path)</span>
+
+
+<span class="s0">class </span><span class="s1">Settings:</span>
+    <span class="s1">PROJECT_NAME:str = </span><span class="s2">&quot;Pereval&quot;</span>
+    <span class="s1">PROJECT_VERSION: str = </span><span class="s2">&quot;1.0.0&quot;</span>
+
+    <span class="s1">POSTGRES_USER : str = os.getenv(</span><span class="s2">&quot;POSTGRES_USER&quot;</span><span class="s1">)</span>
+    <span class="s1">POSTGRES_PASSWORD = os.getenv(</span><span class="s2">&quot;POSTGRES_PASSWORD&quot;</span><span class="s1">)</span>
+    <span class="s1">POSTGRES_SERVER : str = os.getenv(</span><span class="s2">&quot;POSTGRES_SERVER&quot;</span><span class="s1">,</span><span class="s2">&quot;localhost&quot;</span><span class="s1">)</span>
+    <span class="s1">POSTGRES_PORT : str = os.getenv(</span><span class="s2">&quot;POSTGRES_PORT&quot;</span><span class="s1">,</span><span class="s2">5432</span><span class="s1">) </span><span class="s3"># default postgres port is 5432</span>
+    <span class="s1">POSTGRES_DB : str = os.getenv(</span><span class="s2">&quot;POSTGRES_DB&quot;</span><span class="s1">,</span><span class="s2">&quot;tdd&quot;</span><span class="s1">)</span>
+    <span class="s1">DATABASE_URL = </span><span class="s2">f&quot;postgresql://</span><span class="s4">{</span><span class="s1">POSTGRES_USER</span><span class="s4">}</span><span class="s2">:</span><span class="s4">{</span><span class="s1">POSTGRES_PASSWORD</span><span class="s4">}</span><span class="s2">@</span><span class="s4">{</span><span class="s1">POSTGRES_SERVER</span><span class="s4">}</span><span class="s2">:</span><span class="s4">{</span><span class="s1">POSTGRES_PORT</span><span class="s4">}</span><span class="s2">/</span><span class="s4">{</span><span class="s1">POSTGRES_DB</span><span class="s4">}</span><span class="s2">&quot;</span>
+
+
+<span class="s1">settings = Settings()</span></pre>
+</body>
+</html>

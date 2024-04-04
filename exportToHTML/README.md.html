@@ -1,0 +1,170 @@
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #afb9c3;}
+.s1 { color: #afb9c3;}
+.s2 { color: #c88cdc;}
+.s3 { color: #96be78;}
+.s4 { color: #61afe1;}
+</style>
+</head>
+<body bgcolor="#17233d">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+README.md</font>
+</center></td></tr></table>
+<pre><span class="s0">Это приложение FastAPI, которое предоставляет API для отправки и модерации объектов. Оно позволяет создавать новые объекты, обновлять их статус модерации и получать текущий статус модерации объекта.</span>
+
+<span class="s2">## </span><span class="s0">Установка</span>
+
+<span class="s2">1. </span><span class="s0">Клонируйте репозиторий</span><span class="s1">:</span>
+
+<span class="s2">```</span><span class="s3">bash</span>
+<span class="s3">git clone https://github.com/melixz/Pereval</span>
+<span class="s2">```</span>
+
+<span class="s2">2. </span><span class="s0">Установите необходимые зависимости</span><span class="s1">:</span>
+
+<span class="s2">```</span><span class="s3">bash</span>
+<span class="s3">pip install fastapi uvicorn sqlalchemy psycopg2 python-dotenv</span>
+<span class="s2">```</span>
+
+<span class="s2">3. </span><span class="s0">Создайте файл `.env` в корневой директории проекта и добавьте следующие переменные окружения</span><span class="s1">:</span>
+
+<span class="s2">```</span>
+<span class="s3">POSTGRES_SERVER=&lt;ваш_хост_postgres&gt;</span>
+<span class="s3">POSTGRES_PORT=&lt;порт_postgres&gt;</span>
+<span class="s3">POSTGRES_USER=&lt;имя_пользователя_postgres&gt;</span>
+<span class="s3">POSTGRES_PASSWORD=&lt;пароль_postgres&gt;</span>
+<span class="s3">POSTGRES_DB=&lt;имя_базы_данных_postgres&gt;</span>
+<span class="s2">```</span>
+
+<span class="s2">## </span><span class="s0">Использование</span>
+
+<span class="s2">1. </span><span class="s0">Запустите сервер FastAPI</span><span class="s1">:</span>
+
+<span class="s2">```</span><span class="s3">bash</span>
+<span class="s3">uvicorn main:app --reload</span>
+<span class="s2">```</span>
+
+<span class="s2">2. </span><span class="s0">API будет доступен по адресу </span><span class="s4">http://127.0.0.1:8000</span><span class="s0">.</span>
+
+<span class="s2">3. </span><span class="s0">Вы можете получить доступ к документации Swagger UI по адресу </span><span class="s4">http://127.0.0.1:8000/docs</span><span class="s0">.</span>
+
+<span class="s2">## </span><span class="s0">API Endpoints</span>
+
+<span class="s2">### </span><span class="s0">Отправить данные</span>
+
+<span class="s2">- </span><span class="s1">**</span><span class="s0">URL</span><span class="s1">:** </span><span class="s0">`/submitData/`</span>
+<span class="s2">- </span><span class="s1">**</span><span class="s0">Метод</span><span class="s1">:** </span><span class="s0">`POST`</span>
+<span class="s2">- </span><span class="s1">**</span><span class="s0">Тело запроса</span><span class="s1">:**</span>
+
+<span class="s2">```</span><span class="s3">json</span>
+<span class="s3">{</span>
+  <span class="s3">&quot;beauty_title&quot;: &quot;Красивый заголовок&quot;,</span>
+  <span class="s3">&quot;title&quot;: &quot;Заголовок 1&quot;,</span>
+  <span class="s3">&quot;other_titles&quot;: &quot;Другие заголовки&quot;,</span>
+  <span class="s3">&quot;connect&quot;: &quot;Связь&quot;,</span>
+  <span class="s3">&quot;add_time&quot;: &quot;2023-04-01T12:00:00&quot;,</span>
+  <span class="s3">&quot;user&quot;: {</span>
+    <span class="s3">&quot;email&quot;: &quot;user@example.com&quot;,</span>
+    <span class="s3">&quot;fam&quot;: &quot;Иванов&quot;,</span>
+    <span class="s3">&quot;name&quot;: &quot;Иван&quot;,</span>
+    <span class="s3">&quot;otc&quot;: &quot;Отчество&quot;,</span>
+    <span class="s3">&quot;phone&quot;: &quot;+79012345678&quot;</span>
+  <span class="s3">},</span>
+  <span class="s3">&quot;coords&quot;: {</span>
+    <span class="s3">&quot;latitude&quot;: &quot;55.7558&quot;,</span>
+    <span class="s3">&quot;longitude&quot;: &quot;37.6173&quot;,</span>
+    <span class="s3">&quot;height&quot;: &quot;100&quot;</span>
+  <span class="s3">},</span>
+  <span class="s3">&quot;level&quot;: {</span>
+    <span class="s3">&quot;winter&quot;: &quot;low&quot;,</span>
+    <span class="s3">&quot;summer&quot;: &quot;high&quot;,</span>
+    <span class="s3">&quot;autumn&quot;: &quot;medium&quot;,</span>
+    <span class="s3">&quot;spring&quot;: &quot;medium&quot;</span>
+  <span class="s3">},</span>
+  <span class="s3">&quot;images&quot;: [</span>
+    <span class="s3">{</span>
+      <span class="s3">&quot;data&quot;: &quot;base64_encoded_image_data&quot;,</span>
+      <span class="s3">&quot;title&quot;: &quot;Image 1&quot;</span>
+    <span class="s3">},</span>
+    <span class="s3">{</span>
+      <span class="s3">&quot;data&quot;: &quot;base64_encoded_image_data&quot;,</span>
+      <span class="s3">&quot;title&quot;: &quot;Image 2&quot;</span>
+    <span class="s3">}</span>
+  <span class="s3">]</span>
+<span class="s3">}</span>
+<span class="s2">```</span>
+
+<span class="s2">- </span><span class="s1">**</span><span class="s0">Ответ</span><span class="s1">:**</span>
+  <span class="s2">- </span><span class="s0">Статус</span><span class="s1">: </span><span class="s0">`200 OK`</span>
+  <span class="s2">- </span><span class="s0">Тело</span><span class="s1">:</span>
+
+<span class="s2">```</span><span class="s3">json</span>
+<span class="s3">{</span>
+  <span class="s3">&quot;message&quot;: &quot;Data submitted successfully&quot;</span>
+<span class="s3">}</span>
+<span class="s2">```</span>
+
+<span class="s2">### </span><span class="s0">Обновить статус модерации</span>
+
+<span class="s2">- </span><span class="s1">**</span><span class="s0">URL</span><span class="s1">:** </span><span class="s0">`/items/{item_id}/status/{status}`</span>
+<span class="s2">- </span><span class="s1">**</span><span class="s0">Метод</span><span class="s1">:** </span><span class="s0">`PUT`</span>
+<span class="s2">- </span><span class="s1">**</span><span class="s0">Параметры пути</span><span class="s1">:**</span>
+  <span class="s2">- </span><span class="s0">`item_id` </span><span class="s1">(</span><span class="s0">int</span><span class="s1">): </span><span class="s0">ID объекта для обновления.</span>
+  <span class="s2">- </span><span class="s0">`status` </span><span class="s1">(</span><span class="s0">str</span><span class="s1">): </span><span class="s0">Новый статус модерации. Допустимые значения</span><span class="s1">: </span><span class="s0">`new`, `pending`, `accepted`, `rejected`.</span>
+<span class="s2">- </span><span class="s1">**</span><span class="s0">Ответ</span><span class="s1">:**</span>
+  <span class="s2">- </span><span class="s0">Статус</span><span class="s1">: </span><span class="s0">`200 OK`</span>
+  <span class="s2">- </span><span class="s0">Тело</span><span class="s1">:</span>
+
+<span class="s2">```</span><span class="s3">json</span>
+<span class="s3">{</span>
+  <span class="s3">&quot;message&quot;: &quot;Moderation status updated successfully&quot;</span>
+<span class="s3">}</span>
+<span class="s2">```</span>
+
+<span class="s2">- </span><span class="s0">Ошибка</span><span class="s1">: </span><span class="s0">`400 Bad Request` </span><span class="s1">(</span><span class="s0">если предоставленное значение статуса недействительно</span><span class="s1">)</span>
+  <span class="s2">- </span><span class="s0">Тело</span><span class="s1">:</span>
+
+<span class="s2">```</span><span class="s3">json</span>
+<span class="s3">{</span>
+  <span class="s3">&quot;error&quot;: &quot;Invalid status value&quot;</span>
+<span class="s3">}</span>
+<span class="s2">```</span>
+
+<span class="s2">### </span><span class="s0">Получить статус модерации</span>
+
+<span class="s2">- </span><span class="s1">**</span><span class="s0">URL</span><span class="s1">:** </span><span class="s0">`/items/{item_id}/status`</span>
+<span class="s2">- </span><span class="s1">**</span><span class="s0">Метод</span><span class="s1">:** </span><span class="s0">`GET`</span>
+<span class="s2">- </span><span class="s1">**</span><span class="s0">Параметры пути</span><span class="s1">:**</span>
+  <span class="s2">- </span><span class="s0">`item_id` </span><span class="s1">(</span><span class="s0">int</span><span class="s1">): </span><span class="s0">ID объекта для получения статуса модерации.</span>
+<span class="s2">- </span><span class="s1">**</span><span class="s0">Ответ</span><span class="s1">:**</span>
+  <span class="s2">- </span><span class="s0">Статус</span><span class="s1">: </span><span class="s0">`200 OK`</span>
+  <span class="s2">- </span><span class="s0">Тело</span><span class="s1">:</span>
+
+<span class="s2">```</span><span class="s3">json</span>
+<span class="s3">{</span>
+  <span class="s3">&quot;status&quot;: &quot;pending&quot;</span>
+<span class="s3">}</span>
+<span class="s2">```</span>
+
+<span class="s2">- </span><span class="s0">Ошибка</span><span class="s1">: </span><span class="s0">`404 Not Found` </span><span class="s1">(</span><span class="s0">если объект с указанным ID не найден</span><span class="s1">)</span>
+  <span class="s2">- </span><span class="s0">Тело</span><span class="s1">:</span>
+
+<span class="s2">```</span><span class="s3">json</span>
+<span class="s3">{</span>
+  <span class="s3">&quot;error&quot;: &quot;Item with id {item_id} not found&quot;</span>
+<span class="s3">}</span>
+<span class="s2">```</span>
+
+<span class="s2">## </span><span class="s0">Swagger UI</span>
+
+<span class="s0">Документация Swagger UI для этого API доступна по адресу </span><span class="s4">http://127.0.0.1:8000/docs </span><span class="s0">после запуска сервера. Вы можете использовать Swagger UI для тестирования и взаимодействия с API.</span>
+
+</pre>
+</body>
+</html>

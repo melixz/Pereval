@@ -1,0 +1,171 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #c88cdc;}
+.s1 { color: #afb9c3;}
+.s2 { color: #808080;}
+.s3 { color: #96be78;}
+</style>
+</head>
+<body bgcolor="#17233d">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">uvicorn</span>
+<span class="s0">from </span><span class="s1">fastapi </span><span class="s0">import </span><span class="s1">FastAPI</span>
+<span class="s0">from </span><span class="s1">pydantic </span><span class="s0">import </span><span class="s1">BaseModel</span>
+<span class="s0">from </span><span class="s1">datetime </span><span class="s0">import </span><span class="s1">datetime</span>
+<span class="s0">from </span><span class="s1">db.session </span><span class="s0">import </span><span class="s1">ItemService</span>
+<span class="s0">from </span><span class="s1">typing </span><span class="s0">import </span><span class="s1">List, Optional</span>
+
+
+<span class="s1">app = FastAPI()</span>
+<span class="s1">item_service = ItemService()</span>
+
+
+<span class="s2"># Модель для User</span>
+<span class="s0">class </span><span class="s1">UserBase(BaseModel):</span>
+    <span class="s1">email: str</span>
+    <span class="s1">fam: Optional[str] = </span><span class="s0">None</span>
+    <span class="s1">name: Optional[str] = </span><span class="s0">None</span>
+    <span class="s1">otc: Optional[str] = </span><span class="s0">None</span>
+    <span class="s1">phone: Optional[str] = </span><span class="s0">None</span>
+
+    <span class="s0">class </span><span class="s1">Config:</span>
+        <span class="s1">from_attributes = </span><span class="s0">True</span>
+
+
+<span class="s2"># Модель для Coords</span>
+<span class="s0">class </span><span class="s1">CoordsBase(BaseModel):</span>
+    <span class="s1">latitude: str</span>
+    <span class="s1">longitude: str</span>
+    <span class="s1">height: Optional[str] = </span><span class="s0">None</span>
+
+    <span class="s0">class </span><span class="s1">Config:</span>
+        <span class="s1">from_attributes = </span><span class="s0">True</span>
+
+
+<span class="s2"># Модель для Level</span>
+<span class="s0">class </span><span class="s1">LevelBase(BaseModel):</span>
+    <span class="s1">winter: Optional[str] = </span><span class="s0">None</span>
+    <span class="s1">summer: Optional[str] = </span><span class="s0">None</span>
+    <span class="s1">autumn: Optional[str] = </span><span class="s0">None</span>
+    <span class="s1">spring: Optional[str] = </span><span class="s0">None</span>
+
+    <span class="s0">class </span><span class="s1">Config:</span>
+        <span class="s1">from_attributes = </span><span class="s0">True</span>
+
+
+<span class="s2"># Модель для Image</span>
+<span class="s0">class </span><span class="s1">ImageBase(BaseModel):</span>
+    <span class="s1">data: str</span>
+    <span class="s1">title: Optional[str] = </span><span class="s0">None</span>
+
+    <span class="s0">class </span><span class="s1">Config:</span>
+        <span class="s1">from_attributes = </span><span class="s0">True</span>
+
+
+<span class="s2"># Модель для Item, включающая в себя связи</span>
+<span class="s0">class </span><span class="s1">ItemBase(BaseModel):</span>
+    <span class="s1">beauty_title: Optional[str] = </span><span class="s0">None</span>
+    <span class="s1">title: str</span>
+    <span class="s1">other_titles: Optional[str] = </span><span class="s0">None</span>
+    <span class="s1">connect: Optional[str] = </span><span class="s0">None</span>
+    <span class="s1">add_time: Optional[datetime] = </span><span class="s0">None</span>
+    <span class="s1">status: Optional[str] = </span><span class="s3">'new'</span>
+    <span class="s1">user_id: Optional[int] = </span><span class="s0">None</span>
+    <span class="s1">coords_id: Optional[int] = </span><span class="s0">None</span>
+    <span class="s1">level_id: Optional[int] = </span><span class="s0">None</span>
+
+    <span class="s2"># Возможно, вам понадобится включить связанные объекты как подмодели</span>
+    <span class="s1">user: Optional[UserBase] = </span><span class="s0">None</span>
+    <span class="s1">coords: Optional[CoordsBase] = </span><span class="s0">None</span>
+    <span class="s1">level: Optional[LevelBase] = </span><span class="s0">None</span>
+    <span class="s1">images: List[ImageBase] = []</span>
+
+    <span class="s0">class </span><span class="s1">Config:</span>
+        <span class="s1">from_attributes = </span><span class="s0">True</span>
+
+
+<span class="s0">class </span><span class="s1">RequestModel(BaseModel):</span>
+    <span class="s1">beauty_title: Optional[str] = </span><span class="s0">None</span>
+    <span class="s1">title: Optional[str] = </span><span class="s0">None</span>
+    <span class="s1">other_titles: Optional[str] = </span><span class="s0">None</span>
+    <span class="s1">connect: Optional[str] = </span><span class="s0">None</span>
+    <span class="s1">add_time: Optional[datetime] = </span><span class="s0">None</span>
+    <span class="s1">status: Optional[str] = </span><span class="s0">None</span>
+    <span class="s1">coords_id: Optional[int] = </span><span class="s0">None</span>
+    <span class="s1">level_id: Optional[int] = </span><span class="s0">None</span>
+    <span class="s2"># Поле user_id исключено, т.к. не должно редактироваться через этот API</span>
+    <span class="s2"># Поле images исключено из модели, т.к. требует отдельной логики для обработки связей</span>
+
+    <span class="s0">class </span><span class="s1">Config:</span>
+        <span class="s1">from_attributes = </span><span class="s0">True</span>
+<span class="s2"># Модель для создания Item, если требуется</span>
+
+
+<span class="s0">class </span><span class="s1">ItemCreate(ItemBase):</span>
+    <span class="s0">pass</span>
+
+
+<span class="s2"># Модель для ответа, содержащая полный набор данных, включая id</span>
+<span class="s0">class </span><span class="s1">ItemResponse(ItemBase):</span>
+    <span class="s1">id: int</span>
+
+
+<span class="s1">@app.post(</span><span class="s3">&quot;/submitData/&quot;</span><span class="s1">)</span>
+<span class="s0">async def </span><span class="s1">submit_data(item: ItemBase):</span>
+    <span class="s1">item_service.add_item(item)</span>
+    <span class="s0">return </span><span class="s1">{</span><span class="s3">&quot;message&quot;</span><span class="s1">: </span><span class="s3">&quot;Data submitted successfully&quot;</span><span class="s1">}</span>
+
+
+<span class="s1">@app.put(</span><span class="s3">&quot;/items/{item_id}/status/{status}&quot;</span><span class="s1">)</span>
+<span class="s0">async def </span><span class="s1">update_moderation_status(item_id: int, status: str):</span>
+    <span class="s1">allowed_statuses = [</span><span class="s3">'new'</span><span class="s1">, </span><span class="s3">'pending'</span><span class="s1">, </span><span class="s3">'accepted'</span><span class="s1">, </span><span class="s3">'rejected'</span><span class="s1">]</span>
+    <span class="s0">if </span><span class="s1">status </span><span class="s0">not in </span><span class="s1">allowed_statuses:</span>
+        <span class="s0">return </span><span class="s1">{</span><span class="s3">&quot;error&quot;</span><span class="s1">: </span><span class="s3">&quot;Invalid status value&quot;</span><span class="s1">}</span>
+    <span class="s0">try</span><span class="s1">:</span>
+        <span class="s1">item_service.set_moderation_status(item_id, status)</span>
+        <span class="s0">return </span><span class="s1">{</span><span class="s3">&quot;message&quot;</span><span class="s1">: </span><span class="s3">&quot;Moderation status updated successfully&quot;</span><span class="s1">}</span>
+    <span class="s0">except </span><span class="s1">ValueError </span><span class="s0">as </span><span class="s1">e:</span>
+        <span class="s0">return </span><span class="s1">{</span><span class="s3">&quot;error&quot;</span><span class="s1">: str(e)}</span>
+
+
+<span class="s1">@app.get(</span><span class="s3">&quot;/submitData/{item_id}&quot;</span><span class="s1">)</span>
+<span class="s0">async def </span><span class="s1">get_item(item_id: int):</span>
+    <span class="s0">try</span><span class="s1">:</span>
+        <span class="s1">item = item_service.get_item(item_id)</span>
+        <span class="s0">return </span><span class="s1">item</span>
+    <span class="s0">except </span><span class="s1">ValueError </span><span class="s0">as </span><span class="s1">e:</span>
+        <span class="s0">return </span><span class="s1">{</span><span class="s3">&quot;error&quot;</span><span class="s1">: str(e)}</span>
+
+
+<span class="s1">@app.patch(</span><span class="s3">&quot;/submitData/{item_id}&quot;</span><span class="s1">)</span>
+<span class="s0">async def </span><span class="s1">edit_item(item_id: int, item: RequestModel):</span>
+    <span class="s0">try</span><span class="s1">:</span>
+        <span class="s1">state, message = item_service.edit_item(item_id, item)</span>
+        <span class="s0">return </span><span class="s1">{</span><span class="s3">&quot;state&quot;</span><span class="s1">: state, </span><span class="s3">&quot;message&quot;</span><span class="s1">: message}</span>
+    <span class="s0">except </span><span class="s1">Exception </span><span class="s0">as </span><span class="s1">e:  </span><span class="s2"># Используйте более конкретное исключение, если возможно</span>
+        <span class="s0">return </span><span class="s1">{</span><span class="s3">&quot;state&quot;</span><span class="s1">: </span><span class="s3">0</span><span class="s1">, </span><span class="s3">&quot;message&quot;</span><span class="s1">: str(e)}</span>
+
+
+<span class="s1">@app.get(</span><span class="s3">&quot;/submitData/&quot;</span><span class="s1">)</span>
+<span class="s0">async def </span><span class="s1">get_items_by_user_email(user__email: Optional[str] = </span><span class="s0">None</span><span class="s1">):</span>
+    <span class="s0">if </span><span class="s1">user__email:</span>
+        <span class="s1">items = item_service.get_items_by_user_email(user__email)</span>
+        <span class="s0">return </span><span class="s1">items</span>
+    <span class="s0">else</span><span class="s1">:</span>
+        <span class="s0">return </span><span class="s1">{</span><span class="s3">&quot;error&quot;</span><span class="s1">: </span><span class="s3">&quot;Email is required&quot;</span><span class="s1">}</span>
+
+
+<span class="s0">if </span><span class="s1">__name__ == </span><span class="s3">&quot;__main__&quot;</span><span class="s1">:</span>
+    <span class="s1">uvicorn.run(app, host=</span><span class="s3">&quot;127.0.0.1&quot;</span><span class="s1">, port=</span><span class="s3">8000</span><span class="s1">)</span>
+
+
+</pre>
+</body>
+</html>
