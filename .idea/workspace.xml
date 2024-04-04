@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="7.1 Исправлены ошибки, доработан код">
-      <change afterPath="$PROJECT_DIR$/exportToHTML/.env.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exportToHTML/README.md.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exportToHTML/config.py.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exportToHTML/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exportToHTML/main.py.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
+    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="7.2 Исправлены ошибки, доработан код. Добавление облака Vercel">
+      <change afterPath="$PROJECT_DIR$/root_dir/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/root_dir/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vercel.json" beforeDir="false" afterPath="$PROJECT_DIR$/root_dir/vercel.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +62,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\PycharmProjects\Pereval\root_dir" />
       <recent name="C:\Users\Asus\PycharmProjects\Pereval\db" />
     </key>
   </component>
@@ -133,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712225753373</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="7.2 Исправлены ошибки, доработан код. Добавление облака Vercel">
+      <option name="closed" value="true" />
+      <created>1712237678281</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712237678281</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -170,6 +175,7 @@
     <MESSAGE value="Пятый. GET /submitData/&lt;id&gt; — Получение записи по ID" />
     <MESSAGE value="Шестой. Добавлены PATCH /submitData/{id} и GET /submitData/?user__email=&lt;email&gt; а так же новые методы ItemService" />
     <MESSAGE value="7.1 Исправлены ошибки, доработан код" />
-    <option name="LAST_COMMIT_MESSAGE" value="7.1 Исправлены ошибки, доработан код" />
+    <MESSAGE value="7.2 Исправлены ошибки, доработан код. Добавление облака Vercel" />
+    <option name="LAST_COMMIT_MESSAGE" value="7.2 Исправлены ошибки, доработан код. Добавление облака Vercel" />
   </component>
 </project>
