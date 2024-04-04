@@ -1,13 +1,31 @@
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, __version__
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 from datetime import datetime
 from db.session import ItemService
 from typing import List, Optional
+from time import time
 
 
 app = FastAPI()
 item_service = ItemService()
+
+html = f"""
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FastAPI</title>
+    </head>
+    <body>
+        <h1>Hello from PerevalAPI@{__version__}</h1>
+        <ul>
+            <li><a href="/docs">/docs</a></li>
+            <li><a href="/redoc">/redoc</a></li>
+        </ul>
+    </body>
+</html>
+"""
 
 
 # Модель для User
@@ -143,6 +161,16 @@ async def get_items_by_user_email(user__email: Optional[str] = None):
         return items
     else:
         return {"error": "Email is required"}
+
+
+@app.get("/")
+async def root():
+    return HTMLResponse(html)
+
+
+@app.get('/ping')
+async def hello():
+    return {'res': 'pong', 'version': __version__, "time": time()}
 
 
 if __name__ == "__main__":
