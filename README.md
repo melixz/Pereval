@@ -51,7 +51,7 @@ uvicorn main:app --reload
 | `GET`  | `/submitData/`                    | Получить элементы по email пользователя |
 | `PUT`  | `/items/{item_id}/status/{status}`| Обновить статус модерации    |
 | `GET`  | `/submitData/{item_id}`           | Получить элемент             |
-| `PATCH`| `/submitData/{item_id}`           | Редактировать элемент        |
+| `PATCH`| `/submitData/{item_id}`           | Редактировать элемент, если он в статусе 'new'       |
 
 
 ## Swagger UI
