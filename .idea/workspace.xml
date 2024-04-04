@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="7.3 Исправлены ошибки, доработан код. Добавление облака Vercel. Файла .gitignore.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="7.5">
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root_dir/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/root_dir/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root_dir/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root_dir/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ID_PATCH" />
+        <entry key="$PROJECT_DIR$" value="9b8cd204088c71d03a2e8f4f39061783a67d5c46" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,17 +48,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.session.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.main.executor": "Run",
+    "Python.session.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "1b2fc4f3",
+    "ignore.virus.scanning.warn.message": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Asus\PycharmProjects\Pereval\root_dir" />
@@ -181,6 +184,7 @@
     <MESSAGE value="7.1 Исправлены ошибки, доработан код" />
     <MESSAGE value="7.2 Исправлены ошибки, доработан код. Добавление облака Vercel" />
     <MESSAGE value="7.3 Исправлены ошибки, доработан код. Добавление облака Vercel. Файла .gitignore." />
-    <option name="LAST_COMMIT_MESSAGE" value="7.3 Исправлены ошибки, доработан код. Добавление облака Vercel. Файла .gitignore." />
+    <MESSAGE value="7.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="7.5" />
   </component>
 </project>

@@ -2,6 +2,7 @@ import uvicorn
 from fastapi import FastAPI, __version__
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
+from mangum import Mangum
 from pydantic import BaseModel
 from datetime import datetime
 from db.session import ItemService
@@ -183,4 +184,4 @@ async def hello():
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)
 
-
+handler = Mangum(app)
