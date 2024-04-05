@@ -1,4 +1,4 @@
-# .platform/.platform.routes.yaml
+# .platform/routes.yaml
 "http://{default}/":
   type: upstream
   upstream: "app:http"
