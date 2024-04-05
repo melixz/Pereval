@@ -10,7 +10,7 @@ hooks:
     pip install -r requirements.txt
 
 relationships:
-  database: "db:mariadb"
+  database: "db:mysql"
 
 # Определяем команду запуска FastAPI с помощью Uvicorn
 web:
@@ -30,4 +30,3 @@ dependencies:
   python:
     pip: true
     python-requests: ">=2.20.0"
-
