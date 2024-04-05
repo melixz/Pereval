@@ -33,8 +33,9 @@ web:
 # the build hook runs using a package manager for the language.
 # More information: https://docs.platform.sh/create-apps/app-reference.html#dependencies
 dependencies:
-  python3:
-    pipenv: '2023.2.4'
+  python:
+    pip: true
+    python-requests: ">=2.20.0"
 
 # Hooks allow you to customize your code/environment as the project moves through the build and deploy stages
 # More information: https://docs.platform.sh/create-apps/app-reference.html#hooks
