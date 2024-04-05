@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="7. подготовка к выгрузке на облако">
-      <change afterPath="$PROJECT_DIR$/.platform.app.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.platform/.platform/routes.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.platform/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="7.1 подготовка к выгрузке на облако platform.sh">
+      <change afterPath="$PROJECT_DIR$/.platform/.platform/.platform.app.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.platform.app.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.platform/.platform/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.platform/.platform/routes.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712260596572</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="7.1 подготовка к выгрузке на облако platform.sh">
+      <option name="closed" value="true" />
+      <created>1712315619115</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712315619115</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -182,6 +189,7 @@
     <MESSAGE value="Пятый. GET /submitData/&lt;id&gt; — Получение записи по ID" />
     <MESSAGE value="Шестой. Добавлены PATCH /submitData/{id} и GET /submitData/?user__email=&lt;email&gt; а так же новые методы ItemService" />
     <MESSAGE value="7. подготовка к выгрузке на облако" />
-    <option name="LAST_COMMIT_MESSAGE" value="7. подготовка к выгрузке на облако" />
+    <MESSAGE value="7.1 подготовка к выгрузке на облако platform.sh" />
+    <option name="LAST_COMMIT_MESSAGE" value="7.1 подготовка к выгрузке на облако platform.sh" />
   </component>
 </project>

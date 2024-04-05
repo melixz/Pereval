@@ -1,0 +1,33 @@
+# .platform.app.yaml
+name: app
+type: python:3.9
+
+# Диск для хранения данных
+disk: 2048
+
+hooks:
+  build: |
+    pip install -r requirements.txt
+
+relationships:
+  database: "db:mariadb"
+
+# Определяем команду запуска FastAPI с помощью Uvicorn
+web:
+  commands:
+    start: "uvicorn main:app --host '0.0.0.0' --port $PORT"
+  locations:
+    "/":
+      passthru: true
+      root: "public"
+
+variables:
+  env:
+    DATABASE_URL: "mysql://user:password@database.internal:5432/dbname"
+    # Убедитесь, что здесь указаны правильные данные для подключения к вашей базе данных
+
+dependencies:
+  python:
+    pip: true
+    python-requests: ">=2.20.0"
+
