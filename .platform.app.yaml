@@ -1,6 +1,6 @@
 # .platform.app.yaml
 name: app
-type: python:3.11
+type: python:3.9
 
 
 disk: 2048
