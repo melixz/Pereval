@@ -1,0 +1,91 @@
+# .platform.app.yaml
+name: app
+type: python:3.9
+
+# Использовать несколько инстансов если необходимо
+# instances: 2
+
+# Диск для хранения данных
+disk: 2048
+
+hooks:
+  # Выполнение миграций базы данных перед запуском приложения
+  build: |
+    pip install -r requirements.txt
+
+relationships:
+  database: "db:mariadb"
+
+# Запуск FastAPI через Uvicorn с указанием порта и хоста
+web:
+  commands:
+    start: "uvicorn main:app --host 0.0.0.0 --port $PORT"
+  locations:
+    "/":
+      passthru: true
+      root: "public"
+
+# Для статических файлов можно настроить специальные пути, если это необходимо
+# locations:
+#   "/static":
+#     root: "static"
+#     expires: 24h
+#     passthru: true
+#     allow: true
+
+dependencies:
+  python:
+    pip: true
+    python-requests: ">=2.20.0"
+
+runtime:
+  extensions:
+    - amqp
+    - apcu
+    - calendar
+    - ctype
+    - curl
+    - date
+    - exif
+    - fileinfo
+    - filter
+    - ftp
+    - gettext
+    - hash
+    - iconv
+    - intl
+    - json
+    - libxml
+    - mbstring
+    - mongodb
+    - openssl
+    - pcre
+    - pdo
+    - pdo_mysql
+    - pdo_pgsql
+    - pdo_sqlite
+    - pgsql
+    - phar
+    - posix
+    - readline
+    - redis
+    - reflection
+    - session
+    - shmop
+    - simplexml
+    - soap
+    - sockets
+    - sodium
+    - spl
+    - sqlite3
+    - standard
+    - sysvmsg
+    - sysvsem
+    - sysvshm
+    - tokenizer
+    - xml
+    - xmlreader
+    - xmlwriter
+    - xsl
+    - zip
+    - zlib

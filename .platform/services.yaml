@@ -1,0 +1,11 @@
+db:
+  type: mariadb:10.4
+  disk: 1024
+  configuration:
+    schemas:
+      - main
+    endpoints:
+      mysql:
+        default_schema: main
+        privileges:
+          main: admin
