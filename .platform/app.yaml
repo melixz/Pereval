@@ -1,6 +1,6 @@
-# .platform.app.yaml
+# app.yaml
 name: app
-type: python:3.9
+type: python:3.11
 
 # Диск для хранения данных
 disk: 2048
@@ -23,7 +23,7 @@ web:
 
 variables:
   env:
-    DATABASE_URL: "mysql://user:password@database.internal:5432/dbname"
+    DATABASE_URL: "mysql://user:password@database.internal:3306/mariadb"
     # Убедитесь, что здесь указаны правильные данные для подключения к вашей базе данных
 
 dependencies:

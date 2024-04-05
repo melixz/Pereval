@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="7.1 подготовка к выгрузке на облако platform.sh">
-      <change afterPath="$PROJECT_DIR$/.platform/.platform/.platform.app.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.platform.app.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.platform/.platform/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.platform/.platform/routes.yaml" afterDir="false" />
+    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="7.3 подготовка к выгрузке на облако platform.sh">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.platform/.platform/.platform.app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.platform/app.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.platform/.platform/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.platform/routes.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +69,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\PycharmProjects\Pereval\.platform" />
+      <recent name="C:\Users\Asus\PycharmProjects\Pereval" />
+      <recent name="C:\Users\Asus\PycharmProjects\Pereval\.platform\.platform" />
       <recent name="C:\Users\Asus\PycharmProjects\Pereval\db" />
     </key>
   </component>
@@ -152,7 +155,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712315619115</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="7.2 подготовка к выгрузке на облако platform.sh">
+      <option name="closed" value="true" />
+      <created>1712315979740</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712315979740</updated>
+    </task>
+    <task id="LOCAL-00010" summary="7.3 подготовка к выгрузке на облако platform.sh">
+      <option name="closed" value="true" />
+      <created>1712316258969</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712316258969</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -190,6 +209,8 @@
     <MESSAGE value="Шестой. Добавлены PATCH /submitData/{id} и GET /submitData/?user__email=&lt;email&gt; а так же новые методы ItemService" />
     <MESSAGE value="7. подготовка к выгрузке на облако" />
     <MESSAGE value="7.1 подготовка к выгрузке на облако platform.sh" />
-    <option name="LAST_COMMIT_MESSAGE" value="7.1 подготовка к выгрузке на облако platform.sh" />
+    <MESSAGE value="7.2 подготовка к выгрузке на облако platform.sh" />
+    <MESSAGE value="7.3 подготовка к выгрузке на облако platform.sh" />
+    <option name="LAST_COMMIT_MESSAGE" value="7.3 подготовка к выгрузке на облако platform.sh" />
   </component>
 </project>
