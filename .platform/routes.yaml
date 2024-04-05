@@ -1,9 +1,8 @@
 # .platform/routes.yaml
 "http://{default}/":
-  type: upstream
-  upstream: "app:http"
+  type: redirect
+  to: "https://{default}/"
 
 "https://{default}/":
   type: upstream
   upstream: "app:http"
-  tls: {strict: true}
