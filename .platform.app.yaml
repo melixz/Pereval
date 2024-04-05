@@ -33,9 +33,8 @@ web:
 # the build hook runs using a package manager for the language.
 # More information: https://docs.platform.sh/create-apps/app-reference.html#dependencies
 dependencies:
-    python3:
-        pipenv: "2022.12.19"
-
+  python3:
+    pipenv: '2023.2.4'
 
 # Hooks allow you to customize your code/environment as the project moves through the build and deploy stages
 # More information: https://docs.platform.sh/create-apps/app-reference.html#hooks
@@ -50,6 +49,3 @@ hooks:
 
     # Install dependencies
     pipenv install --deploy
-
-# Information on the app's source code and operations that can be run on it.
-# More information: https://docs.platform.sh/create-apps/app-reference.html#source
