@@ -7,8 +7,6 @@ disk: 2048
 
 hooks:
   build: |
-    python --version
-    pip --version
     pip install -r requirements.txt
 
 
