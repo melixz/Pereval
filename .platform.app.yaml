@@ -2,7 +2,7 @@
 name: app
 type: python:3.11
 
-# Диск для хранения данных
+
 disk: 2048
 
 hooks:
@@ -15,7 +15,7 @@ hooks:
 relationships:
   database: "db:mysql"
 
-# Определяем команду запуска FastAPI с помощью Uvicorn
+
 web:
   commands:
     start: "uvicorn main:app --host '0.0.0.0' --port $PORT"
@@ -27,7 +27,7 @@ web:
 variables:
   env:
     DATABASE_URL: "mysql://user:password@database.internal:3306/mariadb"
-    # Убедитесь, что здесь указаны правильные данные для подключения к вашей базе данных
+
 
 dependencies:
   python:
