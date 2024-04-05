@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="7.9999 подготовка к выгрузке на облако platform.sh">
+    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="7.99999 подготовка к выгрузке на облако platform.sh">
+      <change afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.platform.app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.platform.app.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -241,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712321707425</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="7.99999 подготовка к выгрузке на облако platform.sh">
+      <option name="closed" value="true" />
+      <created>1712321940685</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1712321940685</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -290,6 +301,7 @@
     <MESSAGE value="7.99 подготовка к выгрузке на облако platform.sh" />
     <MESSAGE value="7.999 подготовка к выгрузке на облако platform.sh" />
     <MESSAGE value="7.9999 подготовка к выгрузке на облако platform.sh" />
-    <option name="LAST_COMMIT_MESSAGE" value="7.9999 подготовка к выгрузке на облако platform.sh" />
+    <MESSAGE value="7.99999 подготовка к выгрузке на облако platform.sh" />
+    <option name="LAST_COMMIT_MESSAGE" value="7.99999 подготовка к выгрузке на облако platform.sh" />
   </component>
 </project>
