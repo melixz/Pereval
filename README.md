@@ -55,6 +55,10 @@ uvicorn main:app --reload
 | `GET`  | `/`                               | Возвращает HTML-страницу     |
 | `GET`  | `/ping`                           | Возвращает статус сервиса и версию FastAPI |
 
+## Графическая диаграмма 
+
+![API Endpoints Graph](https://diagrams.helpful.dev/d/d:2PeLljYx)
+
 
 ## Swagger UI
 
