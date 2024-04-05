@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="7.3 подготовка к выгрузке на облако platform.sh">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.platform/.platform/.platform.app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.platform/app.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.platform/.platform/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.platform/routes.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="7.4 подготовка к выгрузке на облако platform.sh" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -171,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712316258969</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="7.4 подготовка к выгрузке на облако platform.sh">
+      <option name="closed" value="true" />
+      <created>1712316843947</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712316843947</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -211,6 +215,7 @@
     <MESSAGE value="7.1 подготовка к выгрузке на облако platform.sh" />
     <MESSAGE value="7.2 подготовка к выгрузке на облако platform.sh" />
     <MESSAGE value="7.3 подготовка к выгрузке на облако platform.sh" />
-    <option name="LAST_COMMIT_MESSAGE" value="7.3 подготовка к выгрузке на облако platform.sh" />
+    <MESSAGE value="7.4 подготовка к выгрузке на облако platform.sh" />
+    <option name="LAST_COMMIT_MESSAGE" value="7.4 подготовка к выгрузке на облако platform.sh" />
   </component>
 </project>
