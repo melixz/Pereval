@@ -1,3 +1,4 @@
+import os
 import uvicorn
 from fastapi import FastAPI, __version__
 from fastapi.responses import HTMLResponse
@@ -174,6 +175,7 @@ async def hello():
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    port = os.getenv("PORT") or 8000
+    uvicorn.run(app, host="127.0.0.1", port=int(port))
 
 
