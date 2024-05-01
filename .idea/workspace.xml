@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="8. Добавлен файл test_models.py, pytest и асинхронные тесты для точек доступа API">
+    <list default="true" id="62a421c3-3499-4862-8c56-abced18b146c" name="Changes" comment="8.1">
+      <change afterPath="$PROJECT_DIR$/alembic.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/alembic/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/alembic/env.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/alembic/script.py.mako" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/base_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/base_class.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,27 +61,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests for test_models.test_engine.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_models.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.session.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python tests.Python tests for test_models.test_engine.executor": "Run",
+    "Python tests.Python tests in db_test.py.executor": "Run",
+    "Python tests.Python tests in test_models.py.executor": "Run",
+    "Python.app.executor": "Run",
+    "Python.base_class.executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.db_test.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.session.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Asus\PycharmProjects\Pereval\.platform" />
       <recent name="C:\Users\Asus\PycharmProjects\Pereval" />
-      <recent name="C:\Users\Asus\PycharmProjects\Pereval\.platform\.platform" />
       <recent name="C:\Users\Asus\PycharmProjects\Pereval\db" />
+      <recent name="C:\Users\Asus\PycharmProjects\Pereval\.platform" />
+      <recent name="C:\Users\Asus\PycharmProjects\Pereval\.platform\.platform" />
     </key>
   </component>
   <component name="RunManager">
@@ -315,7 +326,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712342868644</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="8.1">
+      <option name="closed" value="true" />
+      <created>1712510576768</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1712510576768</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -370,6 +389,7 @@
     <MESSAGE value="7.99999999 подготовка к выгрузке на облако platform.sh" />
     <MESSAGE value="7.10 подготовка к выгрузке на облако platform.sh" />
     <MESSAGE value="8. Добавлен файл test_models.py, pytest и асинхронные тесты для точек доступа API" />
-    <option name="LAST_COMMIT_MESSAGE" value="8. Добавлен файл test_models.py, pytest и асинхронные тесты для точек доступа API" />
+    <MESSAGE value="8.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="8.1" />
   </component>
 </project>

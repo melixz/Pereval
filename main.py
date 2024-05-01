@@ -175,7 +175,7 @@ async def hello():
 
 
 if __name__ == "__main__":
-    port = os.getenv("PORT") or 8000
+    port = os.getenv("PORT") or 8001
     uvicorn.run(app, host="127.0.0.1", port=int(port))
 
 

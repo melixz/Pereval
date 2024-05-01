@@ -59,7 +59,7 @@ class Coords(Base):
 class Level(Base):
     __tablename__ = 'levels'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     winter = Column(String)
     summer = Column(String)
     autumn = Column(String)
