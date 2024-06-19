@@ -1,0 +1,142 @@
+# created by virtualenv automatically
+.venv/Lib
+# Байт-компилированные / оптимизированные файлы / DLL
+__pycache__/
+*.py[cod]
+
+# Расширения C
+*.so
+
+# Распределение / упаковка
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+# Обычно эти файлы создаются с помощью python-скрипта из шаблона
+# перед сборкой exe файлом PyInstaller, чтобы внести дату/другую информацию.
+*.manifest
+*.spec
+
+# Логи установщика
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Отчеты о тестировании / покрытии кода тестами
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Переводы
+*.mo
+*.pot
+
+# Специфика Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Специфика Flask
+instance/
+.webassets-cache
+
+# Специфика Scrapy
+.scrapy
+
+# Документация Sphinx
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+# По рекомендации pypa/pipenv#598 рекомендуется включать Pipfile.lock в управление версиями.
+# Однако в некоторых случаях этот файл может быть проигнорирован. Раскомментируйте следующую строку, если хотите:
+#Pipfile.lock
+
+# PEP 582; используется, например, в poetry:
+__pypackages__/
+
+# Специфика Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Обработанные файлы SageMath
+*.sage.py
+
+# Среды
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Настройки проекта Spyder
+.spyderproject
+.spyproject
+
+# Настройки проекта Rope
+.ropeproject
+
+# Документация mkdocs
+/site
+
+# Кэш mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Проверщик типов Pyre
+.pyre/
+
+# Анализатор статических типов pytype
+.pytype/
+
+# Отладочные символы Cython
+cython_debug/
+
+# Настройки специфичных IDE
+.vscode/
+.idea/
+
+# Файлы операционной системы
+.DS_Store
+Thumbs.db
+
+images
+bot.py
