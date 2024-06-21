@@ -16,7 +16,7 @@ git clone https://github.com/melixz/Pereval
 2. Установите необходимые зависимости:
 
 ```bash
-pip install fastapi uvicorn sqlalchemy psycopg2 python-dotenv
+pip install -r requirements.txt
 ```
 
 3. Создайте файл `.env` в корневой директории проекта и добавьте следующие переменные окружения:
