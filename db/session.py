@@ -14,7 +14,9 @@ db_user = os.getenv("POSTGRES_USER")
 db_pass = os.getenv("POSTGRES_PASSWORD")
 db_name = os.getenv("POSTGRES_DB")
 
-engine = create_engine(f"postgresql://{db_user}:{db_pass}@{db_host}:{db_port}/{db_name}")
+engine = create_engine(
+    f"postgresql://{db_user}:{db_pass}@{db_host}:{db_port}/{db_name}"
+)
 Session = sessionmaker(bind=engine)
 
 
@@ -27,7 +29,9 @@ class ItemService:
         user = User(**item_data.user.dict())
         coords = Coords(**item_data.coords.dict())
         level = Level(**item_data.level.dict())
-        images = [Image(data=image.data, title=image.title) for image in item_data.images]
+        images = [
+            Image(data=image.data, title=image.title) for image in item_data.images
+        ]
 
         # Создать объект Item и установить связи
         item = Item(
@@ -39,7 +43,7 @@ class ItemService:
             user=user,
             coords=coords,
             level=level,
-            images=images
+            images=images,
         )
 
         self.session.add(item)
@@ -68,7 +72,11 @@ class ItemService:
             raise ValueError(f"Item with id {item_id} not found")
 
     def edit_item(self, item_id, item_data):
-        item = self.session.query(Item).filter(Item.id == item_id, Item.status == 'new').first()
+        item = (
+            self.session.query(Item)
+            .filter(Item.id == item_id, Item.status == "new")
+            .first()
+        )
         if item:
             # Здесь обновите поля item с использованием данных из item_data
             # Пропустите обновление полей, содержащих ФИО, адрес почты, и телефон
@@ -86,6 +94,3 @@ class ItemService:
 
     def __del__(self):
         self.session.close()
-
-
-

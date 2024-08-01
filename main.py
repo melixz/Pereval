@@ -72,7 +72,7 @@ class ItemBase(BaseModel):
     other_titles: Optional[str] = None
     connect: Optional[str] = None
     add_time: Optional[datetime] = None
-    status: Optional[str] = 'new'
+    status: Optional[str] = "new"
     user_id: Optional[int] = None
     coords_id: Optional[int] = None
     level_id: Optional[int] = None
@@ -119,7 +119,7 @@ async def submit_data(item: ItemBase):
 
 @router.put("/items/{item_id}/status/{status}")
 async def update_moderation_status(item_id: int, status: str):
-    allowed_statuses = ['new', 'pending', 'accepted', 'rejected']
+    allowed_statuses = ["new", "pending", "accepted", "rejected"]
     if status not in allowed_statuses:
         return {"error": "Invalid status value"}
     try:
@@ -164,9 +164,9 @@ async def root():
     return HTMLResponse(html)
 
 
-@app.get('/ping')
+@app.get("/ping")
 async def hello():
-    return {'res': 'pong', 'version': __version__, "time": time()}
+    return {"res": "pong", "version": __version__, "time": time()}
 
 
 if __name__ == "__main__":

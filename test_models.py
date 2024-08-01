@@ -32,7 +32,7 @@ def test_create_item(test_session):
         other_titles="Another Title",
         connect="Test Connection",
         add_time=datetime.now(),
-        status="new"
+        status="new",
     )
     test_session.add(item)
     test_session.commit()
@@ -46,7 +46,7 @@ def test_create_user(test_session):
         fam="Smith",
         name="John",
         otc="Otch",
-        phone="1234567890"
+        phone="1234567890",
     )
     test_session.add(user)
     test_session.commit()
@@ -55,11 +55,7 @@ def test_create_user(test_session):
 
 
 def test_create_coords(test_session):
-    coords = Coords(
-        latitude="45.0",
-        longitude="90.0",
-        height="200"
-    )
+    coords = Coords(latitude="45.0", longitude="90.0", height="200")
     test_session.add(coords)
     test_session.commit()
 
@@ -67,12 +63,7 @@ def test_create_coords(test_session):
 
 
 def test_create_level(test_session):
-    level = Level(
-        winter="hard",
-        summer="easy",
-        autumn="medium",
-        spring="easy"
-    )
+    level = Level(winter="hard", summer="easy", autumn="medium", spring="easy")
     test_session.add(level)
     test_session.commit()
 
@@ -81,23 +72,21 @@ def test_create_level(test_session):
 
 def test_create_image(test_session, test_engine):
     # Предполагается, что уже существует Item для связи
-    test_session.add(Item(
-        beauty_title="Test Item for Image",
-        title="Test Title",
-        other_titles="Another Title",
-        connect="Test Connection",
-        add_time=datetime.now(),
-        status="new"
-    ))
+    test_session.add(
+        Item(
+            beauty_title="Test Item for Image",
+            title="Test Title",
+            other_titles="Another Title",
+            connect="Test Connection",
+            add_time=datetime.now(),
+            status="new",
+        )
+    )
     test_session.commit()
 
     last_item_id = test_session.query(Item).order_by(Item.id.desc()).first().id
 
-    image = Image(
-        data="FakeImageData",
-        title="Test Image",
-        item_id=last_item_id
-    )
+    image = Image(data="FakeImageData", title="Test Image", item_id=last_item_id)
     test_session.add(image)
     test_session.commit()
 
@@ -117,4 +106,8 @@ async def test_ping():
     async with AsyncClient(app=app, base_url="http://test") as ac:
         response = await ac.get("/ping")
     assert response.status_code == 200
-    assert response.json() == {'res': 'pong', 'version': __version__, "time": pytest.approx(time(), abs=5)}
+    assert response.json() == {
+        "res": "pong",
+        "version": __version__,
+        "time": pytest.approx(time(), abs=5),
+    }

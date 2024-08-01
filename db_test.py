@@ -29,7 +29,7 @@ def test_connection():
             user=POSTGRES_USER,
             password=POSTGRES_PASSWORD,
             dbname=POSTGRES_DB,
-            port=POSTGRES_PORT
+            port=POSTGRES_PORT,
         )
 
         print("Подключение к базе данных успешно установлено!")

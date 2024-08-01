@@ -7,7 +7,7 @@ Base = declarative_base()
 
 
 class Item(Base):
-    __tablename__ = 'items'
+    __tablename__ = "items"
 
     id = Column(Integer, primary_key=True)
     beauty_title = Column(String)
@@ -15,25 +15,22 @@ class Item(Base):
     other_titles = Column(String)
     connect = Column(String)
     add_time = Column(DateTime)
-    status = Column(String, default='new')  # Добавленное поле status
-    user_id = Column(Integer, ForeignKey('users.id'))
-    coords_id = Column(Integer, ForeignKey('coords.id'))
-    level_id = Column(Integer, ForeignKey('levels.id'))
+    status = Column(String, default="new")  # Добавленное поле status
+    user_id = Column(Integer, ForeignKey("users.id"))
+    coords_id = Column(Integer, ForeignKey("coords.id"))
+    level_id = Column(Integer, ForeignKey("levels.id"))
 
     user = relationship("User", back_populates="items")
     coords = relationship("Coords", back_populates="items")
     level = relationship("Level", back_populates="items")
     images = relationship("Image", back_populates="item")
 
-
-
-
     class Config:
         from_attributes = True
 
 
 class User(Base):
-    __tablename__ = 'users'
+    __tablename__ = "users"
 
     id = Column(Integer, primary_key=True)
     email = Column(String)
@@ -46,7 +43,7 @@ class User(Base):
 
 
 class Coords(Base):
-    __tablename__ = 'coords'
+    __tablename__ = "coords"
 
     id = Column(Integer, primary_key=True)
     latitude = Column(String)
@@ -57,7 +54,7 @@ class Coords(Base):
 
 
 class Level(Base):
-    __tablename__ = 'levels'
+    __tablename__ = "levels"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     winter = Column(String)
@@ -69,12 +66,11 @@ class Level(Base):
 
 
 class Image(Base):
-    __tablename__ = 'images'
+    __tablename__ = "images"
 
     id = Column(Integer, primary_key=True)
     data = Column(String)
     title = Column(String)
-    item_id = Column(Integer, ForeignKey('items.id'))
+    item_id = Column(Integer, ForeignKey("items.id"))
 
     item = relationship("Item", back_populates="images")
-
