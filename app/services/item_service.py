@@ -6,6 +6,7 @@ from app.models.level import Level
 from app.models.image import Image
 from fastapi import HTTPException
 
+
 class ItemService:
     def __init__(self, db: Session):
         self.db = db
