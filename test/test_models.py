@@ -3,7 +3,12 @@ from fastapi import __version__
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
-from db.base_class import Base, Item, User, Coords, Level, Image
+from db.base_class import Base
+from app.models.item import Item
+from app.models.user import User
+from app.models.coords import Coords
+from app.models.level import Level
+from app.models.image import Image
 from httpx import AsyncClient
 from main import app
 from time import time

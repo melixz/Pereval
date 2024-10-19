@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from db.base_class import Base
+from app.models.image import Image  # нужно для тестирования
 
 
 class Item(Base):
