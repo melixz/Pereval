@@ -9,36 +9,48 @@ router = APIRouter(prefix="/api", tags=["Items"])
 
 
 # Отправка данных
-@router.post("/submitData/")
+@router.post("/submitData/", summary="Отправка данных")
 async def submit_data(item: ItemBase, db: Session = Depends(get_db)):
+    """
+    Отправка нового элемента в базу данных.
+    """
     service = ItemService(db)
     service.add_item(item)
     return {"message": "Data submitted successfully"}
 
 
 # Обновление статуса модерации
-@router.put("/items/{item_id}/status/{status}")
+@router.put("/items/{item_id}/status/{status}", summary="Обновление статуса модерации")
 async def update_moderation_status(
     item_id: int, status: str, db: Session = Depends(get_db)
 ):
+    """
+    Обновление статуса модерации для элемента по его ID.
+    """
     service = ItemService(db)
     service.set_moderation_status(item_id, status)
     return {"message": "Status updated"}
 
 
 # Получение элемента по ID
-@router.get("/submitData/{item_id}")
+@router.get("/submitData/{item_id}", summary="Получение элемента по ID")
 async def get_item(item_id: int, db: Session = Depends(get_db)):
+    """
+    Получение элемента по ID.
+    """
     service = ItemService(db)
     item = service.get_item(item_id)
     return item
 
 
 # Получение всех элементов по email пользователя
-@router.get("/submitData/")
+@router.get("/submitData/", summary="Получение всех элементов по email пользователя")
 async def get_items_by_user_email(
     user_email: Optional[str] = None, db: Session = Depends(get_db)
 ):
+    """
+    Получение всех элементов по email пользователя.
+    """
     if user_email:
         service = ItemService(db)
         items = service.get_items_by_user_email(user_email)
@@ -47,8 +59,11 @@ async def get_items_by_user_email(
 
 
 # Редактирование элемента, если его статус 'new'
-@router.patch("/submitData/{item_id}")
+@router.patch("/submitData/{item_id}", summary="Редактирование элемента")
 async def edit_item(item_id: int, item: RequestModel, db: Session = Depends(get_db)):
+    """
+    Редактирование элемента по ID, если его статус 'new'.
+    """
     service = ItemService(db)
     state, message = service.edit_item(item_id, item)
     return {"state": state, "message": message}
