@@ -8,7 +8,6 @@ from typing import Optional
 router = APIRouter(prefix="/api", tags=["Items"])
 
 
-# Отправка данных
 @router.post("/submitData/", summary="Отправка данных")
 async def submit_data(item: ItemBase, db: Session = Depends(get_db)):
     """
@@ -19,7 +18,6 @@ async def submit_data(item: ItemBase, db: Session = Depends(get_db)):
     return {"message": "Data submitted successfully"}
 
 
-# Обновление статуса модерации
 @router.put("/items/{item_id}/status/{status}", summary="Обновление статуса модерации")
 async def update_moderation_status(
     item_id: int, status: str, db: Session = Depends(get_db)
@@ -32,7 +30,6 @@ async def update_moderation_status(
     return {"message": "Status updated"}
 
 
-# Получение элемента по ID
 @router.get("/submitData/{item_id}", summary="Получение элемента по ID")
 async def get_item(item_id: int, db: Session = Depends(get_db)):
     """
@@ -43,7 +40,6 @@ async def get_item(item_id: int, db: Session = Depends(get_db)):
     return item
 
 
-# Получение всех элементов по email пользователя
 @router.get("/submitData/", summary="Получение всех элементов по email пользователя")
 async def get_items_by_user_email(
     user_email: Optional[str] = None, db: Session = Depends(get_db)
@@ -58,7 +54,6 @@ async def get_items_by_user_email(
     return {"error": "Email is required"}
 
 
-# Редактирование элемента, если его статус 'new'
 @router.patch("/submitData/{item_id}", summary="Редактирование элемента")
 async def edit_item(item_id: int, item: RequestModel, db: Session = Depends(get_db)):
     """
