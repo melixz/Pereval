@@ -57,7 +57,6 @@ class ItemBase(BaseModel):
         from_attributes = True
 
 
-# Модель для PATCH запроса (частичное обновление)
 class RequestModel(BaseModel):
     beauty_title: Optional[str] = None
     title: Optional[str] = None
