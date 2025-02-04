@@ -11,6 +11,5 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: always
-  # Для хранения данных PostgreSQL
 volumes:
   postgres_data:
