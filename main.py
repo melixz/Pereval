@@ -8,7 +8,6 @@ app = FastAPI(
     description="API для управления данными",
 )
 
-# Подключение маршрутов
 app.include_router(items.router)
 
 
@@ -20,7 +19,6 @@ def read_root():
     return {"Hello": "World"}
 
 
-# Для проверки состояния приложения
 @app.get("/ping")
 def ping():
     """
